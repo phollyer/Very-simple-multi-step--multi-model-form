@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Contact name
+    %th Company
+  - for company_contact in @company_contacts
+    %tr
+      %td= company_contact.contact_name
+      %td= company_contact.company_id
+      %td= link_to 'Show', company_contact
+      %td= link_to 'Edit', edit_company_contact_path(company_contact)
+      %td= link_to 'Destroy', company_contact, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Company Contact", new_company_contact_path

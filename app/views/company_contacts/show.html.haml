@@ -1,0 +1,13 @@
+%p
+  %strong Contact Name:
+  = @company_contact.contact_name
+%p
+  %strong Company:
+  = @company_contact.company_id
+
+%p
+  = link_to "Edit", edit_company_contact_path(@company_contact)
+  |
+  = link_to "Destroy", @company_contact, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", company_contacts_path

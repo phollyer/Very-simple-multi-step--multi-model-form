@@ -1,0 +1,31 @@
+== Very Simple Multi-Step, Multi-Model Form
+
+This is a very simple demo for submitting data to 2 associated models via a 2 page form.
+
+Two Models: Company and Company Contact.
+
+Company has one Company Contact.
+Company Contact belongs to Company.
+
+Cucumber Features prove it works, but it is the simplest happy path. I leave it as
+an exercise for the reader to handle edge cases, and error handling.
+
+== Basic Overview
+
+1. User fills out, and submits the Company Form.
+2. Data is sent to the create action in CompaniesController.
+3. Company Data is stored in a session var - session[:company].
+4. CompaniesController redirects to new_company_contact_path.
+5. User fills out and submits Company Contact Form.
+6. Data is sent to the create action in CompanyContactsController.
+7. CompanyContactsController saves the Company Data stored in session[:company].
+8. CompanyContactsController saves the CompanyContact Data as submitted by the form.
+9. CompanyContactsController redirects to show the Company and CompanyContact data.
+
+== Additional Resources
+
+Railscast: http://railscasts.com/episodes/217-multistep-forms
+
+== Notes
+
+I don't like erb, so the views are in haml.

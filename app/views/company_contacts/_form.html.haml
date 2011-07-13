@@ -1,0 +1,8 @@
+= form_for @company_contact do |f|
+  = f.error_messages
+  %p
+    = f.label :contact_name
+    %br
+    = f.text_field :contact_name          
+  %p
+    = f.submit
